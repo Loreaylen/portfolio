@@ -1,2 +1,20 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import Menu from '../lib/components/Menu.svelte'
+  import AboutMe from '../lib/components/AboutMe.svelte'
+  import WorkExperience from '../lib/components/WorkExperience.svelte'
+  import Proyects from '../lib/components/Proyects.svelte'
+  import Contact from '../lib/components/Contact.svelte'
+</script>
+
+<header>
+  <Menu/>
+</header>
+
+<body>
+  <AboutMe/>
+  <WorkExperience/>
+  <Proyects/>
+  <Contact/>
+</body>
+
+
