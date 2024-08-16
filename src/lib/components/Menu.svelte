@@ -1,3 +1,5 @@
+
+
 <style>
 li {
   list-style-type: none;
@@ -17,17 +19,20 @@ ul {
 }
 
 a {
-  font-family: 'NunitoSans-VariableFont_YTLC,opsz,wdth,wght';
+  font-family: 'Nunito Variable', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
 }
 
 </style>
 
 <navbar>
   <ul>
-    <li><a href='#aboutMe'>Sobre mí</a></li>
-    <li><a href='#workingExperience'>Experiencia laboral</a></li>
-    <li><a href='#projects'>Proyectos</a></li>
-    <li><a href='#technologies'>Tecnologías y herramientas</a></li>
-    <li><a href='#contact'>Contacto</a></li>
+    <li><a href='#aboutMe'>SOBRE MÍ</a></li>
+    <li><a href='#workingExperience'>EXPERIENCIA LABORAL</a></li>
+    <li><a href='#projects'>PROYECTOS</a></li>
+    <li><a href='#technologies'>TECNOLOGÍAS Y HERRAMIENTAS</a></li>
+    <li><a href='#contact'>CONTACTO</a></li>
   </ul>
 </navbar>
