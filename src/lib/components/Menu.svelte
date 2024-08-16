@@ -5,8 +5,9 @@ li {
   list-style-type: none;
 }
 
-navbar {
-  width: 100%;
+nav {
+  height: auto;
+  padding: 0 30px;
 }
 
 ul {
@@ -15,19 +16,22 @@ ul {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 a {
-  font-family: 'Nunito Variable', sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  color: #000;
+  display: block;
+  padding: 15px;
+}
+
+a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  background: radial-gradient(circle, rgba(233,233,235,1) 45%, rgba(2,0,36,0.1) 100%);
 }
 
 </style>
 
-<navbar>
+<nav>
   <ul>
     <li><a href='#aboutMe'>SOBRE MÍ</a></li>
     <li><a href='#workingExperience'>EXPERIENCIA LABORAL</a></li>
@@ -35,4 +39,4 @@ a {
     <li><a href='#technologies'>TECNOLOGÍAS Y HERRAMIENTAS</a></li>
     <li><a href='#contact'>CONTACTO</a></li>
   </ul>
-</navbar>
+</nav>
