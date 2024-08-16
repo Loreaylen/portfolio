@@ -6,15 +6,18 @@
   import Contact from '../lib/components/Contact.svelte'
 </script>
 
-<header>
-  <Menu/>
-</header>
+
 
 <body>
-  <AboutMe/>
-  <WorkExperience/>
-  <Proyects/>
-  <Contact/>
+  <header>
+    <Menu/>
+  </header>
+  <main>
+    <AboutMe id={'aboutMe'}/>
+    <WorkExperience id={'workExperience'}/>
+    <Proyects id={'proyects'}/>
+    <Contact id={'contact'}/>
+  </main> 
 </body>
 
 

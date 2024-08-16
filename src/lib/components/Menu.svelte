@@ -16,14 +16,18 @@ ul {
   justify-content: space-around;
 }
 
+a {
+  font-family: 'NunitoSans-VariableFont_YTLC,opsz,wdth,wght';
+}
+
 </style>
 
 <navbar>
   <ul>
-    <li><a href=''>Sobre mí</a></li>
-    <li><a href='#'>Experiencia laboral</a></li>
-    <li><a href='#'>Proyectos</a></li>
-    <li><a href='#'>Tecnologías y herramientas</a></li>
-    <li><a href='#'>Contacto</a></li>
+    <li><a href='#aboutMe'>Sobre mí</a></li>
+    <li><a href='#workingExperience'>Experiencia laboral</a></li>
+    <li><a href='#projects'>Proyectos</a></li>
+    <li><a href='#technologies'>Tecnologías y herramientas</a></li>
+    <li><a href='#contact'>Contacto</a></li>
   </ul>
 </navbar>

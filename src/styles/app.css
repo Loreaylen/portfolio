@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght';
+  src: url(./NunitoSans-Italic-VariableFont_YTLC%2Copsz%2Cwdth%2Cwght.woff2) format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'NunitoSans-VariableFont_YTLC,opsz,wdth,wght';
+  src: url(./NunitoSans-VariableFont_YTLC%2Copsz%2Cwdth%2Cwght.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
