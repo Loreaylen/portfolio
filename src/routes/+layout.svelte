@@ -7,10 +7,10 @@
 
   /*
 PALETA CLARA
-links: #145789
+links: #125688
 titulos, texto: #2F2F31
 resaltado:  #2F2F31
-fondo: #E9E9EB
+fondo: #F5F5F5
 */
 
 /*
