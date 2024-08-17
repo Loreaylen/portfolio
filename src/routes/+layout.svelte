@@ -29,14 +29,14 @@ fondo: #000000
   }
 
   :global(body) {
-    background-color:#E9E9EB;
+    background-color:#F5F5F5;
   }
 
   :global(a) {
   font-family: 'Nunito Variable', sans-serif;
-  font-weight: 600;
+  font-weight: 800;
   text-decoration: none;
-  color: #145789;
+  color: #125688;
 }
 
 </style>

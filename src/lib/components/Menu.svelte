@@ -1,4 +1,6 @@
+<script>
 
+</script>
 
 <style>
 li {
@@ -22,12 +24,17 @@ ul {
 a {
   display: block;
   padding: 15px;
+  transition: all 100ms ease-in;
 }
 
 a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  background: radial-gradient(circle, rgba(233,233,235,1) 45%, rgba(2,0,36,0.1) 100%);
+  background-color: #fff;
+  transform: translate(1px, -3px);
+  color: #000;
+  box-shadow:  -1px -10px 0px -4px  #000 inset;
 }
+
+/*hover oscuro -> background-color: #384247; color: #51F0FF;*/
 
 </style>
 
