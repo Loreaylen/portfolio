@@ -6,7 +6,13 @@
   import Contact from '../lib/components/Contact.svelte'
 </script>
 
-
+<style>
+  @media (width <= 950px) {
+    header {
+      height: 100vh;
+    }
+  }
+</style>
 
 <body>
   <header>
