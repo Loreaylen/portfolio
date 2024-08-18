@@ -5,18 +5,31 @@
   import Proyects from '../lib/components/Proyects.svelte'
   import Contact from '../lib/components/Contact.svelte'
   import Icon from '@iconify/svelte';
+  import ColorModeLogo from '../lib/components/ColorModeLogo.svelte'
 
   let showNavbar = false
+  let open = true
 
   const toggleMenu = () => {
     return showNavbar = !showNavbar
+  }
+
+  const toggleDarkMode = () => {
+    return open = !open
   }
 </script>
 
 <style>
   
-  button {
-    display: none;
+  :global(.darkMode) {
+    height: auto;
+    width: 130px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 3px;
   }
 
   :global(.menu){
@@ -55,7 +68,10 @@
     <button on:click={toggleMenu}>
       <Icon class="menu" icon="simple-line-icons:menu" inline={false} />
     </button>
-    <div>Modo claro/oscuro</div>
+    <button class="darkMode" on:click={toggleDarkMode}>
+      <ColorModeLogo {open}/>
+      <span>Modo {open ? "oscuro" : "claro"}</span>
+    </button>
     <div>Idioma</div>
     <Menu {showNavbar}/>
   </header>
