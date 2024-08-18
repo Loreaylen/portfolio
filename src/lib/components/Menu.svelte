@@ -1,7 +1,6 @@
 <script>
-import Icon from '@iconify/svelte';
+  export let showNavbar = false
 </script>
-
 <style>
 
 li {
@@ -39,24 +38,16 @@ a:hover {
 
 /*hover oscuro -> background-color: #384247; color: #51F0FF;*/
 
-:global(.menu){
-display: none;
-}
 
-button {
-  border: none;
-}
+
 
 @media (width <= 950px) {
-  :global(.menu) {
-    display: block;
-    height: 30px;
-    width: 30px;
-  }
-  
+
   nav {
+    position: absolute;
     max-width: 350px;
-    height: 100%;
+    top: 100%;
+    height: 600px;
     flex-direction: column;
     align-items: flex-start;
     padding: 5px;
@@ -83,11 +74,7 @@ button {
 
 </style>
 
-<nav>
-  <button>
-    <Icon class="menu" icon="simple-line-icons:menu" inline={false} />
-  </button>
-  
+<nav style="display:{showNavbar ? 'block': 'none'};">
   <ul>
     <li><a href='#aboutMe'>SOBRE MÍ</a></li>
     <li><a href='#workingExperience'>EXPERIENCIA LABORAL</a></li>
