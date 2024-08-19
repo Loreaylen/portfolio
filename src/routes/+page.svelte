@@ -6,9 +6,11 @@
   import Contact from '../lib/components/Contact.svelte'
   import Icon from '@iconify/svelte';
   import ColorModeLogo from '../lib/components/ColorModeLogo.svelte'
+  import CompanyCube from '../lib/components/CompanyCube.svelte'
 
   let showNavbar = false
   let open = true
+  let language = "EN"
 
   const toggleMenu = () => {
     return showNavbar = !showNavbar
@@ -17,9 +19,14 @@
   const toggleDarkMode = () => {
     return open = !open
   }
+
+  const toggleLanguage = () => {
+    return language = (language == "ES" ? "EN" :"ES")
+  }
 </script>
 
 <style>
+  
   
   :global(.darkMode) {
     height: auto;
@@ -37,11 +44,6 @@
     width: 100%;
   }
 
-  div {
-    width: 120px;
-    border: 1px solid pink;
-    padding: 10px;
-  }
 
   header {
     height: auto;
@@ -72,7 +74,12 @@
       <ColorModeLogo {open}/>
       <span>Modo {open ? "oscuro" : "claro"}</span>
     </button>
-    <div>Idioma</div>
+    <button on:click={toggleLanguage}>
+      <CompanyCube {language}/>
+      <span>{language}</span>
+    </button>
+    
+    
     <Menu {showNavbar}/>
   </header>
   <main>
