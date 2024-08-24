@@ -1,4 +1,5 @@
 <script>
+  import { browser } from '$app/environment';
   import Menu from '../lib/components/Menu.svelte'
   import AboutMe from '../lib/components/AboutMe.svelte'
   import WorkExperience from '../lib/components/WorkExperience.svelte'
@@ -8,9 +9,21 @@
   import ColorModeLogo from '../lib/components/ColorModeLogo.svelte'
   import CompanyCube from '../lib/components/CompanyCube.svelte'
 
-  let showNavbar = false
+
+  let width;
   let open = true
   let language = "EN"
+  let showNavbar = false
+
+  if(browser){
+    width = window.innerWidth;
+  }
+
+  const handleResize = () => {
+  width = window.innerWidth
+  showNavbar = width >= 950
+}
+
 
   const toggleMenu = () => {
     return showNavbar = !showNavbar
@@ -39,9 +52,8 @@
     padding: 3px;
   }
 
-  :global(.menu){
-    height: 100%;
-    width: 100%;
+  :global(.burguer){
+    display: none;
   }
 
 
@@ -56,31 +68,30 @@
   }
 
   @media (width <= 950px) {
-    button {
+    :global(.burguer) {
       display: block;
       height: 50px;
       width: 50px;
     }
   }
 </style>
-
+<svelte:window on:resize={handleResize}/>
 <body>
   
   <header>
     <button on:click={toggleMenu}>
-      <Icon class="menu" icon="simple-line-icons:menu" inline={false} />
+      <Icon class="burguer" icon="simple-line-icons:menu" inline={false} />
     </button>
+    <Menu {showNavbar}/>
     <button class="darkMode" on:click={toggleDarkMode}>
       <ColorModeLogo {open}/>
       <span>Modo {open ? "oscuro" : "claro"}</span>
     </button>
-    <button on:click={toggleLanguage}>
+    <button class="language" on:click={toggleLanguage}>
       <CompanyCube {language}/>
       <span>{language}</span>
     </button>
     
-    
-    <Menu {showNavbar}/>
   </header>
   <main>
     <AboutMe id={'aboutMe'}/>

@@ -1,5 +1,8 @@
 <script>
-  export let showNavbar = false
+
+  export let showNavbar = false;
+ 
+
 </script>
 <style>
 
@@ -38,10 +41,8 @@ a:hover {
 
 /*hover oscuro -> background-color: #384247; color: #51F0FF;*/
 
-
-
-
 @media (width <= 950px) {
+  
 
   nav {
     position: absolute;
@@ -55,6 +56,7 @@ a:hover {
     background-color:#F1F1F1;
     box-shadow: 5px 3px 7px -1px rgba(0,0,0,0.58);
   }
+
 
   ul {
     flex-direction: column;
@@ -70,11 +72,14 @@ a:hover {
   a:hover {
   box-shadow: 10px -1px  0px -4px  #000 inset;
 }
+
+
 }
 
 </style>
 
-<nav style="display:{showNavbar ? 'block': 'none'};">
+
+<nav class='navbar' style={showNavbar ? 'display:flex;' : 'display:none;'}>
   <ul>
     <li><a href='#aboutMe'>SOBRE MÍ</a></li>
     <li><a href='#workingExperience'>EXPERIENCIA LABORAL</a></li>
