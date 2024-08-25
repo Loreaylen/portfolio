@@ -9,8 +9,8 @@
   }
  </script>
 <svg
-  width="50"
-  height="50"
+  width="35"
+  height="35"
   viewBox="0 0 13.229167 13.229166"
   version="1.1"
   id="svg1"

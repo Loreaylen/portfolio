@@ -32,7 +32,7 @@ fondo: #000000
     background-color:#F5F5F5;
   }
 
-  :global(a) {
+  :global(a, span) {
   font-family: 'Nunito Variable', sans-serif;
   font-weight: 800;
   text-decoration: none;

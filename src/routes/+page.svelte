@@ -9,9 +9,9 @@
   import ColorModeLogo from '../lib/components/ColorModeLogo.svelte'
   import CompanyCube from '../lib/components/CompanyCube.svelte'
 
-
+  const BREAKPOINT = 900;
   let width;
-  let open = true
+  let open = false
   let language = "EN"
   let showNavbar = false
 
@@ -21,9 +21,8 @@
 
   const handleResize = () => {
   width = window.innerWidth
-  showNavbar = width >= 950
+  showNavbar = width > BREAKPOINT
 }
-
 
   const toggleMenu = () => {
     return showNavbar = !showNavbar
@@ -39,11 +38,27 @@
 </script>
 
 <style>
+
+  header {
+    height: 50px;
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
   
+  button {
+    border: 2px solid transparent;
+    background-color: transparent;
+    height: auto;
+  }
   
   :global(.darkMode) {
     height: auto;
-    width: 130px;
+    width: 150px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -51,46 +66,69 @@
     gap: 5px;
     padding: 3px;
   }
-
-  :global(.burguer){
-    display: none;
+  :global(.language){
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    width: 63px;
+    padding: 0 3px;
   }
 
+  :global(.burguer) {
+      display: block;
+      height: 35px;
+      width: 35px;
+    }
 
-  header {
-    height: auto;
-    width: 100%;
-    border: 1px solid blue;
+  :global(.pageOptions){
     display: flex;
     flex-direction: row nowrap;
     align-items: center;
-    position: relative;
+    height: auto;
+    width: auto;
+    gap:10px;
   }
 
-  @media (width <= 950px) {
-    :global(.burguer) {
-      display: block;
-      height: 50px;
-      width: 50px;
-    }
+  
+  
+  span {
+    flex-grow: 1;
   }
+
+  button:not(.bgButton) {
+    transition: border-color 120ms ease-out;
+  }
+
+  button:not(.bgButton):hover{
+    border-color: rgba(0, 0, 0, 0.5);
+  }
+  
 </style>
 <svelte:window on:resize={handleResize}/>
+<svelte:head>
+  <title>Portalfolio</title>
+</svelte:head>
 <body>
   
   <header>
-    <button on:click={toggleMenu}>
-      <Icon class="burguer" icon="simple-line-icons:menu" inline={false} />
-    </button>
-    <Menu {showNavbar}/>
+    {#if width <= BREAKPOINT}
+      <button class='bgButton' on:click={toggleMenu}>
+        <Icon class="burguer" icon={ showNavbar ? "subway:left-arrow" : "rivet-icons:menu"} inline={false} />
+      </button>
+    {/if}
+    <Menu {showNavbar} {width}/>
+    <div class='pageOptions'>
+      <button class="language" on:click={toggleLanguage}>
+        <CompanyCube {language}/>
+        <span>{language}</span>
+      </button>   
     <button class="darkMode" on:click={toggleDarkMode}>
       <ColorModeLogo {open}/>
-      <span>Modo {open ? "oscuro" : "claro"}</span>
+      <span>MODO {open ? "OSCURO" : "CLARO"}</span>
     </button>
-    <button class="language" on:click={toggleLanguage}>
-      <CompanyCube {language}/>
-      <span>{language}</span>
-    </button>
+    
+  </div>
     
   </header>
   <main>
