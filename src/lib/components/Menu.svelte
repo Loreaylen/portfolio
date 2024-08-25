@@ -21,14 +21,14 @@ nav {
 ul {
   width: auto;
   display: flex;
-  gap: 10px;
+  gap: 5px;
   flex-direction: row;
   align-items: center;
 }
 
 a {
   display: block;
-  padding: 5px;
+  padding: 10px;
   transition: all 100ms ease-in;
   font-size: 0.7rem;
 }
@@ -37,7 +37,7 @@ a:hover {
   background-color: rgb(255, 255, 255, 0.5);
   transform: translate(1px, -3px);
   color: #000;
-  box-shadow:  -1px -10px 0px -4px  #000 inset;
+  box-shadow:  -1px -8px 0px -4px  #000 inset;
 }
 
 

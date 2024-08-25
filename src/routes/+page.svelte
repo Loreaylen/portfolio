@@ -11,8 +11,8 @@
 
   const BREAKPOINT = 900;
   let width;
-  let open = false
-  let language = "EN"
+  let open = true
+  let language = "ES"
   let showNavbar = false
 
   if(browser){
