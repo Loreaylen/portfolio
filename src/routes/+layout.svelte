@@ -1,22 +1,27 @@
 <script lang="ts">
   import '@fontsource-variable/nunito/wght.css';
+  import palette from '../data/palette.json'
   import { onMount } from 'svelte';
   import { lightTheme } from '../lib/stores/preferencesStore';
 
-  let lightTheme_value;
   let root;
 
- $: {
-    if (root) {
-      // Aplicar el estilo basado en el valor del store
-      if ($lightTheme) {
-        root.style.setProperty('--background', '#F5F5F5');
-        root.style.setProperty('--links', '#125688');
-      } else {
-        root.style.setProperty('--background', '#000');
-        root.style.setProperty('--links', '#6EABD4');
+  $: {
+      if (root) {
+        // Aplicar el estilo basado en el valor del store
+        if ($lightTheme) {
+          setTheme(palette.light)
+        } else {
+          setTheme(palette.dark)
+        }
       }
     }
+
+  const setTheme = (theme) => {
+    for(let prop of theme){
+      root.style.setProperty(prop.name, prop.color);
+    }
+    return
   }
 
   // Establecer root cuando el componente se monta
@@ -49,7 +54,8 @@ fondo: #000000
   --background: #F5F5F5;
   --titles-text: #2F2F31;
   --links: #125688;
-  --highlight: #2F2F31
+  --highlight: #2F2F31;
+  --navbar: #F5F5F5;
 }
 
   :global(*){
