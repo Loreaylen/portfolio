@@ -11,8 +11,10 @@
       // Aplicar el estilo basado en el valor del store
       if ($lightTheme) {
         root.style.setProperty('--background', '#F5F5F5');
+        root.style.setProperty('--links', '#125688');
       } else {
         root.style.setProperty('--background', '#000');
+        root.style.setProperty('--links', '#6EABD4');
       }
     }
   }
@@ -45,6 +47,9 @@ fondo: #000000
 
 :root {
   --background: #F5F5F5;
+  --titles-text: #2F2F31;
+  --links: #125688;
+  --highlight: #2F2F31
 }
 
   :global(*){
@@ -63,7 +68,7 @@ fondo: #000000
   font-family: 'Nunito Variable', sans-serif;
   font-weight: 800;
   text-decoration: none;
-  color: #125688;
+  color: var(--links);
 }
 
 </style>
