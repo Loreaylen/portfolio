@@ -82,6 +82,7 @@
       display: block;
       height: 35px;
       width: 35px;
+      color: var(--titles-text)
     }
 
   :global(.pageOptions){
@@ -104,7 +105,7 @@
   }
 
   button:not(.bgButton):hover{
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: var(--border-shadow);
   }
   
 </style>

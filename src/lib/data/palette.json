@@ -19,6 +19,14 @@
     {
       "name": "--navbar",
       "color": "#F5F5F5"
+    },
+    {
+      "name": "--hover",
+      "color": "rgb(255, 255, 255, 0.5)"
+    },
+    {
+      "name": "--border-shadow",
+      "color": "rgba(0, 0, 0, 0.5)"
     }
 
   ],
@@ -42,7 +50,14 @@
     {
       "name": "--navbar",
       "color": "#000000"
+    },
+    {
+      "name": "--hover",
+      "color": "rgb(255, 255, 255, 0.5)"
+    },
+    {
+      "name": "--border-shadow",
+      "color": "rgba(255, 255, 255, 0.5)"
     }
-
   ]
 }

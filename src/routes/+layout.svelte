@@ -1,14 +1,14 @@
 <script lang="ts">
   import '@fontsource-variable/nunito/wght.css';
-  import palette from '../data/palette.json'
+  import palette from '$lib/data/palette.json'
   import { onMount } from 'svelte';
   import { lightTheme } from '../lib/stores/preferencesStore';
-
+  
   let root;
 
   $: {
       if (root) {
-        // Aplicar el estilo basado en el valor del store
+
         if ($lightTheme) {
           setTheme(palette.light)
         } else {
@@ -24,7 +24,6 @@
     return
   }
 
-  // Establecer root cuando el componente se monta
   onMount(() => {
     root = document.documentElement;
   });
@@ -56,6 +55,8 @@ fondo: #000000
   --links: #125688;
   --highlight: #2F2F31;
   --navbar: #F5F5F5;
+  --hover: rgb(255, 255, 255, 0.5);
+  --border-shadow: rgb(0, 0, 0, 0.5)
 }
 
   :global(*){
