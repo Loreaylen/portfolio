@@ -1,0 +1,63 @@
+{
+  "light":[
+    {
+      "name": "--background",
+      "color": "#F5F5F5"
+    },
+    {
+      "name": "--titles-text",
+      "color": "#2F2F31"
+    },
+    {
+      "name": "--links",
+      "color": "#125688"
+    },
+    {
+      "name": "--highlight",
+      "color": "#2F2F31"
+    },
+    {
+      "name": "--navbar",
+      "color": "#F5F5F5"
+    },
+    {
+      "name": "--hover",
+      "color": "rgb(255, 255, 255, 0.5)"
+    },
+    {
+      "name": "--border-shadow",
+      "color": "rgba(0, 0, 0, 0.5)"
+    }
+
+  ],
+  "dark": [
+    {
+      "name": "--background",
+      "color": "#000000"
+    },
+    {
+      "name": "--titles-text",
+      "color": "#F5F5F5"
+    },
+    {
+      "name": "--links",
+      "color": "#6EABD4"
+    },
+    {
+      "name": "--highlight",
+      "color": "#F5C43E"
+    },
+    {
+      "name": "--navbar",
+      "color": "#000000"
+    },
+    {
+      "name": "--hover",
+      "color": "rgb(255, 255, 255, 0.5)"
+    },
+    {
+      "name": "--border-shadow",
+      "color": "rgba(255, 255, 255, 0.5)"
+    }
+  ]
+}

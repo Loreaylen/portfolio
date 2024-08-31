@@ -34,10 +34,10 @@ a {
 }
 
 a:hover {
-  background-color: rgb(255, 255, 255, 0.5);
+  background-color: var(--hover);
   transform: translate(1px, -3px);
-  color: #000;
-  box-shadow:  -1px -8px 0px -4px  #000 inset;
+  color: var(--titles-text);
+  box-shadow:  -1px -8px 0px -4px  var(--titles-text) inset;
 }
 
 
@@ -54,7 +54,7 @@ a:hover {
     height: calc(100vh - 50px);
     flex-direction: column;
     align-items: flex-start;
-    box-shadow: 5px 3px 7px -1px rgba(0,0,0,0.58);
+    box-shadow: 5px 3px 7px -1px var(--titles-text);
   }
 
 
@@ -78,7 +78,7 @@ a:hover {
   }
 
   a:hover {
-  box-shadow: 12px -1px  0px -4px  #000 inset;
+  box-shadow: 12px -1px  0px -4px  var(--titles-text) inset;
 }
 }
 

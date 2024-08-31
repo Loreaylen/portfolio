@@ -1,5 +1,33 @@
 <script lang="ts">
   import '@fontsource-variable/nunito/wght.css';
+  import palette from '$lib/data/palette.json'
+  import { onMount } from 'svelte';
+  import { lightTheme } from '../lib/stores/preferencesStore';
+  
+  let root;
+
+  $: {
+      if (root) {
+
+        if ($lightTheme) {
+          setTheme(palette.light)
+        } else {
+          setTheme(palette.dark)
+        }
+      }
+    }
+
+  const setTheme = (theme) => {
+    for(let prop of theme){
+      root.style.setProperty(prop.name, prop.color);
+    }
+    return
+  }
+
+  onMount(() => {
+    root = document.documentElement;
+  });
+
 </script>
 
 
@@ -21,6 +49,17 @@ resaltado: #F5C43E
 fondo: #000000
 */
 
+:root {
+  --background: #F5F5F5;
+  --titles-text: #2F2F31;
+  --links: #125688;
+  --highlight: #2F2F31;
+  --navbar: #F5F5F5;
+  --hover: rgb(255, 255, 255, 0.5);
+  --border-shadow: rgb(0, 0, 0, 0.5);
+  --links-font: 'Nunito Variable', sans-serif;
+}
+
   :global(*){
     margin: 0;
     padding: 0;
@@ -29,14 +68,15 @@ fondo: #000000
   }
 
   :global(body) {
-    background-color:#F5F5F5;
+    background-color:var(--background);
+    transition: all 500ms ease-in;
   }
 
   :global(a, span) {
-  font-family: 'Nunito Variable', sans-serif;
+  font-family: var(--links-font);
   font-weight: 800;
   text-decoration: none;
-  color: #125688;
+  color: var(--links);
 }
 
 </style>

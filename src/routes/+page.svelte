@@ -8,12 +8,15 @@
   import Icon from '@iconify/svelte';
   import ColorModeLogo from '../lib/components/ColorModeLogo.svelte'
   import CompanyCube from '../lib/components/CompanyCube.svelte'
+  import { lightTheme } from '../lib/stores/preferencesStore'
 
   const BREAKPOINT = 900;
   let width;
-  let open = true
   let language = "ES"
-  let showNavbar = false
+  let showNavbar = true
+
+
+
 
   if(browser){
     width = window.innerWidth;
@@ -29,7 +32,7 @@
   }
 
   const toggleDarkMode = () => {
-    return open = !open
+    lightTheme.update(n => !n)
   }
 
   const toggleLanguage = () => {
@@ -79,6 +82,7 @@
       display: block;
       height: 35px;
       width: 35px;
+      color: var(--titles-text)
     }
 
   :global(.pageOptions){
@@ -101,7 +105,7 @@
   }
 
   button:not(.bgButton):hover{
-    border-color: rgba(0, 0, 0, 0.5);
+    border-color: var(--border-shadow);
   }
   
 </style>
@@ -124,8 +128,8 @@
         <span>{language}</span>
       </button>   
     <button class="darkMode" on:click={toggleDarkMode}>
-      <ColorModeLogo {open}/>
-      <span>MODO {open ? "OSCURO" : "CLARO"}</span>
+      <ColorModeLogo />
+      <span>MODO {lightTheme ? "OSCURO" : "CLARO"}</span>
     </button>
     
   </div>
