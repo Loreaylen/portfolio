@@ -8,15 +8,15 @@
   import Icon from '@iconify/svelte';
   import ColorModeLogo from '../lib/components/ColorModeLogo.svelte'
   import CompanyCube from '../lib/components/CompanyCube.svelte'
-  import { lightTheme } from '../lib/stores/preferencesStore'
+  import { lightTheme, languageSettings } from '../lib/stores/preferencesStore'
 
   const BREAKPOINT = 900;
   let width;
   let language = "ES"
   let showNavbar = true
+  let theme;
 
-
-
+  $: theme = $languageSettings.theme
 
   if(browser){
     width = window.innerWidth;
@@ -36,7 +36,9 @@
   }
 
   const toggleLanguage = () => {
-    return language = (language == "ES" ? "EN" :"ES")
+    language = (language == "ES" ? "EN" :"ES")
+    languageSettings.updateStore(language)
+    return 
   }
 </script>
 
@@ -121,7 +123,7 @@
         <Icon class="burguer" icon={ showNavbar ? "subway:left-arrow" : "rivet-icons:menu"} inline={false} />
       </button>
     {/if}
-    <Menu {showNavbar} {width}/>
+    <Menu {showNavbar} {width} {language}/>
     <div class='pageOptions'>
       <button class="language" on:click={toggleLanguage}>
         <CompanyCube {language}/>
@@ -129,7 +131,7 @@
       </button>   
     <button class="darkMode" on:click={toggleDarkMode}>
       <ColorModeLogo />
-      <span>MODO {lightTheme ? "OSCURO" : "CLARO"}</span>
+      <span>{$lightTheme ? theme.dark.toUpperCase() : theme.light.toUpperCase()}</span>
     </button>
     
   </div>
