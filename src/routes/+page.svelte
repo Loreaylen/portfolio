@@ -8,7 +8,7 @@
   import Icon from '@iconify/svelte';
   import ColorModeLogo from '../lib/components/ColorModeLogo.svelte'
   import CompanyCube from '../lib/components/CompanyCube.svelte'
-  import { lightTheme } from '../lib/stores/preferencesStore'
+  import { lightTheme, languageSettings } from '../lib/stores/preferencesStore'
 
   const BREAKPOINT = 900;
   let width;
@@ -34,7 +34,9 @@
   }
 
   const toggleLanguage = () => {
-    return language = (language == "ES" ? "EN" :"ES")
+    language = (language == "ES" ? "EN" :"ES")
+    languageSettings.updateStore(language)
+    return 
   }
 </script>
 
