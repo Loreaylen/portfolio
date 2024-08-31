@@ -16,8 +16,6 @@
   let showNavbar = true
 
 
-
-
   if(browser){
     width = window.innerWidth;
   }
@@ -121,7 +119,7 @@
         <Icon class="burguer" icon={ showNavbar ? "subway:left-arrow" : "rivet-icons:menu"} inline={false} />
       </button>
     {/if}
-    <Menu {showNavbar} {width}/>
+    <Menu {showNavbar} {width} {language}/>
     <div class='pageOptions'>
       <button class="language" on:click={toggleLanguage}>
         <CompanyCube {language}/>

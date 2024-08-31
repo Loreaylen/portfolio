@@ -1,0 +1,20 @@
+{
+  "EN":{
+    "menu":{
+      "about": "About me",
+      "projects": "Projects",
+      "stack": "Tools & Technologies",
+      "exp": "Work experience",
+      "contact": "Contact"
+    }
+  },
+  "ES":{
+    "menu":{
+      "about": "Sobre mí",
+      "projects": "Proyectos",
+      "stack": "Tecnologías y herramientas",
+      "exp": "Experiencia laboral",
+      "contact": "Contacto"
+    }
+  }
+}

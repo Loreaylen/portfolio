@@ -1,6 +1,19 @@
 <script>
-
+  
+  import languages from '../data/languages.json'
   export let showNavbar = false;
+  export let language = 'ES';
+
+  let langData;
+  let menu;
+
+$: {
+  langData = languages[language]
+  menu = langData.menu
+}
+
+
+
 
 </script>
 <style>
@@ -86,10 +99,10 @@ a:hover {
 
 <nav style={showNavbar ? 'display:flex;' : 'display:none;'}>
   <ul>
-    <li><a href='#aboutMe'>SOBRE MÍ</a></li>
-    <li><a href='#projects'>PROYECTOS</a></li>
-    <li><a href='#technologies'>TECNOLOGÍAS Y HERRAMIENTAS</a></li>
-    <li><a href='#workingExperience'>EXPERIENCIA LABORAL</a></li>
-    <li><a href='#contact'>CONTACTO</a></li>
+    <li><a href='#aboutMe'>{menu.about.toUpperCase()}</a></li>
+    <li><a href='#projects'>{menu.projects.toUpperCase()}</a></li>
+    <li><a href='#technologies'>{menu.stack.toUpperCase()}</a></li>
+    <li><a href='#workingExperience'>{menu.exp.toUpperCase()}</a></li>
+    <li><a href='#contact'>{menu.contact.toUpperCase()}</a></li>
   </ul>
 </nav>
