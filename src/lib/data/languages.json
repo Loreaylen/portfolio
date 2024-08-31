@@ -1,6 +1,10 @@
 {
-  "EN":{
-    "menu":{
+  "EN": {
+    "theme": {
+      "dark": "Dark mode",
+      "light": "light mode"
+    },
+    "menu": {
       "about": "About me",
       "projects": "Projects",
       "stack": "Tools & Technologies",
@@ -8,8 +12,12 @@
       "contact": "Contact"
     }
   },
-  "ES":{
-    "menu":{
+  "ES": {
+    "theme": {
+      "dark": "Modo oscuro",
+      "light": "Modo claro"
+    },
+    "menu": {
       "about": "Sobre mí",
       "projects": "Proyectos",
       "stack": "Tecnologías y herramientas",

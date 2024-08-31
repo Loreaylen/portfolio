@@ -14,7 +14,9 @@
   let width;
   let language = "ES"
   let showNavbar = true
+  let theme;
 
+  $: theme = $languageSettings.theme
 
   if(browser){
     width = window.innerWidth;
@@ -129,7 +131,7 @@
       </button>   
     <button class="darkMode" on:click={toggleDarkMode}>
       <ColorModeLogo />
-      <span>MODO {lightTheme ? "OSCURO" : "CLARO"}</span>
+      <span>{$lightTheme ? theme.dark.toUpperCase() : theme.light.toUpperCase()}</span>
     </button>
     
   </div>
