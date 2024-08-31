@@ -1,17 +1,16 @@
 <script>
   
   import languages from '../data/languages.json'
+  import { readOnlyLang } from '$lib/stores/preferencesStore.js'
   export let showNavbar = false;
-  export let language = 'ES';
 
   let langData;
   let menu;
 
 $: {
-  langData = languages[language]
-  menu = langData.menu
+  langData = $readOnlyLang;
+  menu = langData.menu;
 }
-
 
 
 
