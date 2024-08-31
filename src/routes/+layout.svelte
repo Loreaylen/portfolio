@@ -56,7 +56,8 @@ fondo: #000000
   --highlight: #2F2F31;
   --navbar: #F5F5F5;
   --hover: rgb(255, 255, 255, 0.5);
-  --border-shadow: rgb(0, 0, 0, 0.5)
+  --border-shadow: rgb(0, 0, 0, 0.5);
+  --links-font: 'Nunito Variable', sans-serif;
 }
 
   :global(*){
@@ -72,7 +73,7 @@ fondo: #000000
   }
 
   :global(a, span) {
-  font-family: 'Nunito Variable', sans-serif;
+  font-family: var(--links-font);
   font-weight: 800;
   text-decoration: none;
   color: var(--links);
